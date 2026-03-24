@@ -20,7 +20,7 @@ app.get(/^\/$/, (req, res) => {
     res.redirect("/home")
 })
 
-app.use(/\/home(.html)?/, require("./routes/homeRoute.js")) // Home route
+// app.use(/\/home(.html)?/, require("./routes/homeRoute.js")) // Home route
 app.use(/\/tasks/, require("./routes/tasksRoute")) // Tasks route
 
 connectDB()
