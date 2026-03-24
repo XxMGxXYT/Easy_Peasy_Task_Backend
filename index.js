@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, "public"))); // Add the static middl
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 app.use(express.json()) // for parsing application/json
 app.use(cookieParser()) // for parsing cookies
-app.use(date) // Logs middleware
+// app.use(date) // Logs middleware
 
 // // Routing always to the home page
 // app.get(/^\/$/, (req, res) => {
