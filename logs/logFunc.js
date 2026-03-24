@@ -1,7 +1,7 @@
 const path = require("path")
 const fs = require("fs")
 const fsPromises = require("fs").promises
-const { v4: uuid } = require("uuid")
+const { v4: uuid } = await import('uuid');
 const dfs = require("date-fns")
 
 const date = async (req, res, next) => {
