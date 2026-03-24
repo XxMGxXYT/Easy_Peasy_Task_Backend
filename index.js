@@ -15,12 +15,12 @@ app.use(express.json()) // for parsing application/json
 app.use(cookieParser()) // for parsing cookies
 app.use(date) // Logs middleware
 
-// Routing always to the home page
-app.get(/^\/$/, (req, res) => {
-    res.redirect("/home")
-})
+// // Routing always to the home page
+// app.get(/^\/$/, (req, res) => {
+//     res.redirect("/home")
+// })
 
-// app.use(/\/home(.html)?/, require("./routes/homeRoute.js")) // Home route
+app.use(/\/home(.html)?/, require("./routes/homeRoute.js")) // Home route
 app.use(/\/tasks/, require("./routes/tasksRoute")) // Tasks route
 
 connectDB()
