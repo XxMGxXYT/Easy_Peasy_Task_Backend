@@ -1,4 +1,5 @@
 const express = require("express")
+const path = require("path")
 const app = express()
 require("dotenv").config()
 const mongoose = require("mongoose")
@@ -9,7 +10,7 @@ const cookieParser = require("cookie-parser")
 const cors = require("cors")
 
 app.use(cors()) // CORS
-app.use(express.static("public")) // Add the static middleware to serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, "public"))); // Add the static middleware to serve static files from the "public" directory
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 app.use(express.json()) // for parsing application/json
 app.use(cookieParser()) // for parsing cookies
@@ -30,3 +31,5 @@ mongoose.connection.once("open", () => {
         console.log(`Server is running on http://localhost:${PORT}`);
     })
 });
+
+module.exports = app;
