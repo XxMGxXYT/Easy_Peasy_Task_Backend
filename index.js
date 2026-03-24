@@ -20,8 +20,8 @@ app.use(date) // Logs middleware
 //     res.redirect("/home")
 // })
 
-app.use(/\/home(.html)?/, require("./routes/homeRoute.js")) // Home route
-app.use(/\/tasks/, require("./routes/tasksRoute")) // Tasks route
+app.use("/", require("./routes/homeRoute.js")) // Home route
+app.use("/tasks", require("./routes/tasksRoute")) // Tasks route
 
 connectDB()
 
